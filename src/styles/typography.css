@@ -1,3 +1,10 @@
+:root {
+    --font-heading: 1.5rem;
+    --font-subheading: 1.25rem;
+    --font-body: 1rem;
+    --font-small: 0.875rem;
+}
+
 * {
     font-family: "Playfair Display", monospace;
     font-weight: normal;

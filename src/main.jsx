@@ -5,6 +5,8 @@ import routes from "./route.jsx";
 
 import "./styles/reset.css";
 import "./styles/typography.css";
+import "./styles/colours.css";
+import "./styles/spacing.css";
 
 const router = createBrowserRouter(routes);
 createRoot(document.getElementById('root')).render(

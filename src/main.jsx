@@ -7,6 +7,7 @@ import "./styles/reset.css";
 import "./styles/typography.css";
 import "./styles/colours.css";
 import "./styles/spacing.css";
+import "./styles/main.css";
 
 const router = createBrowserRouter(routes);
 createRoot(document.getElementById('root')).render(

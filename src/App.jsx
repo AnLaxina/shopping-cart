@@ -5,7 +5,7 @@ function App() {
 
     return (
         <>
-            <header>Shopping Cart</header>
+            <header><h1>Shopping Cart App</h1></header>
             <main><Outlet/></main>
             <footer>2025 AnLaxina</footer>
         </>

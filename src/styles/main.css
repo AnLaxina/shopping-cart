@@ -1,0 +1,17 @@
+/*This is meant for global styles that will apply to all components*/
+
+#root {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-medium);
+    padding: var(--spacing-large);
+}
+
+* {
+    background-color: var(--colour-primary);
+    color: var(--colour-surface)
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}

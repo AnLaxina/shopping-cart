@@ -1,0 +1,10 @@
+/* Colour palette was found here: https://coolors.co/palette/606c38-283618-fefae0-dda15e-bc6c25
+   Olive Garden Feast
+*/
+:root {
+    --colour-primary: #606C38;
+    --colour-secondary: #283618;
+    --colour-surface: #FEFAE0;
+    --color-accent: #DDA15E;
+    --color-accent-dark: #BC6C25;
+}

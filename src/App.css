@@ -7,9 +7,9 @@ header {
 
 ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: var(--spacing-medium);
-    gap: var(--spacing-small);
+    gap: var(--spacing-xl);
 }
 
 ul > li {

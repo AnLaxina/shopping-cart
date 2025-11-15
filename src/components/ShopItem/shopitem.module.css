@@ -27,6 +27,12 @@
   gap: var(--spacing-medium);
 }
 
+.shopItem input {
+  color: var(--colour-secondary);
+  font-weight: bold;
+  font-size: var(--font-body);
+}
+
 label {
   font-weight: bold;
 }

@@ -5,6 +5,12 @@ header {
     gap: var(--spacing-medium);
 }
 
+footer,
+header > h1 {
+    /* I could use flexbox here instead... but eh honestly this works lol */
+    margin: 0 auto;
+}
+
 ul {
     display: flex;
     justify-content: center;

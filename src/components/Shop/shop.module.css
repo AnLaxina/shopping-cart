@@ -6,7 +6,6 @@
 
 @media (width <= 480px) {
   .shopItems {
-    background-color: red;
     grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
   }
 }

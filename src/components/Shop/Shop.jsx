@@ -1,19 +1,47 @@
 import styles from "./shop.module.css";
 import ShopItem from "../ShopItem/ShopItem";
+import { useState, useEffect } from "react";
 
 export default function Shop() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [shopItems, setShopItems] = useState([]);
+
+  // TODO: - use the fakestore API to populate each shop item
+
+  function assignShopItems(products) {
+    const shopItems = products.map((product) => ({
+      id: product.id,
+      shopName: product.title,
+      shopImage: product.image,
+    }));
+    setShopItems(shopItems);
+  }
+
+  function getAllProducts() {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => {
+        assignShopItems(data);
+      })
+      .finally(() => setIsLoading(false));
+  }
+
+  useEffect(() => {
+    getAllProducts();
+  }, []);
+
   return (
     <div className={styles.shop}>
       <h2>ShopItem</h2>
-      <div className={styles.shopItems}>
-        <ShopItem itemName="Chicken" />
-        <ShopItem itemName="かのじょ" />
-        <ShopItem itemName="Burger" />
-        <ShopItem itemName="Toy" />
-        <ShopItem itemName="Toy" />
-        <ShopItem itemName="Toy" />
-        <ShopItem itemName="Toy" />
-      </div>
+      {isLoading ? (
+        <p>Loading shop items...</p>
+      ) : (
+        <div className={styles.shopItems}>
+          <ShopItem itemName="Chicken" />
+          <ShopItem itemName="かのじょ" />
+          <ShopItem itemName={shopItems[0].shopName} />
+        </div>
+      )}
     </div>
   );
 }

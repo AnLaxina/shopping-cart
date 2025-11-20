@@ -1,5 +1,7 @@
 import styles from "./cart.module.css";
 
+import CartRow from "../CartRow/CartRow.jsx";
+
 export default function Cart() {
   return (
     <div className={styles.cart}>
@@ -14,14 +16,7 @@ export default function Cart() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Product Name</td>
-            <td>
-              <img src="/vite.svg" alt="Vite logo" />
-            </td>
-            <td>Cool Description</td>
-            <td>3</td>
-          </tr>
+          <CartRow />
         </tbody>
       </table>
       <p>This is the cart page!</p>

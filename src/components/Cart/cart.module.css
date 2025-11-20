@@ -1,0 +1,18 @@
+table {
+    table-layout: fixed;
+    /* This makes the table fill in the entire width */
+    align-self: stretch;
+    /* Just for testing */
+    background-color: red;
+    border-collapse: collapse;
+}
+
+thead, tr, td, th {
+    border: solid 2px blue;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

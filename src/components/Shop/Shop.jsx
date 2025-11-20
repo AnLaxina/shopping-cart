@@ -37,9 +37,13 @@ export default function Shop() {
         <p>Loading shop items...</p>
       ) : (
         <div className={styles.shopItems}>
-          <ShopItem itemName="Chicken" />
-          <ShopItem itemName="かのじょ" />
-          <ShopItem itemName={shopItems[0].shopName} />
+          {shopItems.map((shopItem) => (
+            <ShopItem
+              key={shopItem.id}
+              itemName={shopItem.shopName}
+              itemImage={shopItem.shopImage}
+            />
+          ))}
         </div>
       )}
     </div>

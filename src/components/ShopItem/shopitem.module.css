@@ -11,6 +11,7 @@
 .shopItem {
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center;
   gap: var(--spacing-medium);
   padding: var(--spacing-small);
@@ -72,8 +73,16 @@ button:hover {
     height: 64px;
   }
 
+  .shopItem {
+    aspect-ratio: 1 / 1;
+  }
+
   .shopItem input {
     max-width: 20%;
+  }
+
+  .shopItem h3 {
+    font-size: var(--font-small);
   }
 
 }

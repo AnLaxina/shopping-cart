@@ -18,7 +18,6 @@
   background-color: var(--colour-secondary);
   border: 4px solid var(--colour-surface);
   border-radius: 15px;
-  aspect-ratio: 1 / 1;
 }
 
 .shopItem img {
@@ -71,10 +70,6 @@ button:hover {
   .shopItem img {
     width: 64px;
     height: 64px;
-  }
-
-  .shopItem {
-    aspect-ratio: 1 / 1;
   }
 
   .shopItem input {

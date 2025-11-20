@@ -6,8 +6,6 @@ export default function Shop() {
   const [isLoading, setIsLoading] = useState(true);
   const [shopItems, setShopItems] = useState([]);
 
-  // TODO: - use the fakestore API to populate each shop item
-
   function assignShopItems(products) {
     const shopItems = products.map((product) => ({
       id: product.id,

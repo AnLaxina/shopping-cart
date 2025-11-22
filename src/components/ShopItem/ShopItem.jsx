@@ -32,8 +32,8 @@ export default function ShopItem({
 
     const formData = new FormData(event.target);
     const quantity = Number(formData.get("quantity"));
-    setItemCount(itemCount + quantity);
-    setCartCount(cartCount + quantity);
+    setItemCount((prev) => prev + quantity);
+    setCartCount((prev) => prev + quantity);
 
     addCartItem(itemId, itemName, itemImage, itemDescription, quantity);
   }

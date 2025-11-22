@@ -1,5 +1,4 @@
 import { useOutletContext } from "react-router-dom";
-import { useState } from "react";
 import styles from "./shopitem.module.css";
 
 export default function ShopItem({
@@ -9,18 +8,22 @@ export default function ShopItem({
   itemDescription,
 }) {
   const [cartCount, setCartCount, cartItems, setCartItems] = useOutletContext();
-  const [itemCount, setItemCount] = useState(0);
 
-  // TODO: Make it so that the itemQuantity would also be in sync with itemCount asynchronously
-  // To indicate which product is what, use the id to update the quantity too
   function addCartItem(id, name, image, description, quantity) {
     setCartItems((prev) => {
       const newMap = new Map(prev);
-      newMap.set(id, {
+
+      // If an item doesn't exist yet, create an empty item with quantity 0
+      const existing = newMap.get(id) ?? {
         itemName: name,
         itemImage: image,
         itemDescription: description,
-        itemQuantity: itemCount,
+        itemQuantity: 0,
+      };
+
+      newMap.set(id, {
+        ...existing,
+        itemQuantity: quantity + existing.itemQuantity,
       });
 
       return newMap;
@@ -32,9 +35,7 @@ export default function ShopItem({
 
     const formData = new FormData(event.target);
     const quantity = Number(formData.get("quantity"));
-    setItemCount((prev) => prev + quantity);
     setCartCount((prev) => prev + quantity);
-
     addCartItem(itemId, itemName, itemImage, itemDescription, quantity);
   }
 

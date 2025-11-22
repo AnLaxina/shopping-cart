@@ -1,3 +1,5 @@
+import styles from "./cartrow.module.css";
+
 export default function CartRow({
   productName = "Product Name",
   productImage = "/vite.svg",
@@ -11,7 +13,7 @@ export default function CartRow({
         <img src={productImage} alt="" />
       </td>
       <td>{productDescription}</td>
-      <td>{quantity}</td>
+      <td className={styles.quantityCell}>{quantity}</td>
     </tr>
   );
 }

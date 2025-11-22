@@ -11,6 +11,7 @@ export default function Shop() {
       id: product.id,
       shopName: product.title,
       shopImage: product.image,
+      shopDescription: product.description,
     }));
     setShopItems(shopItems);
   }
@@ -38,8 +39,10 @@ export default function Shop() {
           {shopItems.map((shopItem) => (
             <ShopItem
               key={shopItem.id}
+              itemId={shopItem.id}
               itemName={shopItem.shopName}
               itemImage={shopItem.shopImage}
+              itemDescription={shopItem.shopDescription}
             />
           ))}
         </div>

@@ -4,7 +4,11 @@ import { useState } from "react";
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
+  const [cartItems, setCartItems] = useState(new Map());
 
+  function checkCartItems() {
+    console.log(cartItems);
+  }
   return (
     <>
       <header>
@@ -26,9 +30,14 @@ function App() {
         </nav>
       </header>
       <main>
-        <Outlet context={[cartCount, setCartCount]} />
+        <Outlet context={[cartCount, setCartCount, cartItems, setCartItems]} />
       </main>
-      <footer>2025 AnLaxina</footer>
+      <footer>
+        2025 AnLaxina{" "}
+        <button type="button" onClick={checkCartItems}>
+          Click me to check the cart?
+        </button>
+      </footer>
     </>
   );
 }

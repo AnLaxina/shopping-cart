@@ -7,7 +7,9 @@ function App() {
   const [cartItems, setCartItems] = useState(new Map());
 
   function checkCartItems() {
-    console.log(cartItems);
+    for (const [key, value] of cartItems.entries()) {
+      console.log(`Key: ${key}, Value: ${value.itemName}`);
+    }
   }
   return (
     <>

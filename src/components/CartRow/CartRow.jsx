@@ -8,7 +8,7 @@ export default function CartRow({
     <tr>
       <td>{productName}</td>
       <td>
-        <img src={productImage} alt="Vite logo" />
+        <img src={productImage} alt="" />
       </td>
       <td>{productDescription}</td>
       <td>{quantity}</td>

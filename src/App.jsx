@@ -6,11 +6,6 @@ function App() {
   const [cartCount, setCartCount] = useState(0);
   const [cartItems, setCartItems] = useState(new Map());
 
-  function checkCartItems() {
-    for (const [key, value] of cartItems.entries()) {
-      console.log(`Key: ${key}, Value: ${value.itemName}`);
-    }
-  }
   return (
     <>
       <header>
@@ -35,10 +30,7 @@ function App() {
         <Outlet context={[cartCount, setCartCount, cartItems, setCartItems]} />
       </main>
       <footer>
-        2025 AnLaxina{" "}
-        <button type="button" onClick={checkCartItems}>
-          Click me to check the cart?
-        </button>
+        <p>2025 AnLaxina</p>
       </footer>
     </>
   );

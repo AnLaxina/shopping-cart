@@ -27,21 +27,21 @@ export default function Cart() {
   return (
     <div className={styles.cart}>
       <h2>Your Cart</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Image</th>
-            <th>Description</th>
-            <th>Quantity</th>
-          </tr>
-        </thead>
-        <tbody>
-          <CartRow />
-          {listOfCartItems}
-        </tbody>
-      </table>
-      <p>This is the cart page!</p>
+      {listOfCartItems.length === 0 ? (
+        <h3>No items in the cart!</h3>
+      ) : (
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Image</th>
+              <th>Description</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>{listOfCartItems}</tbody>
+        </table>
+      )}
     </div>
   );
 }

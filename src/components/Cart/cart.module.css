@@ -15,6 +15,7 @@ thead, tr, td, th {
 .cart {
     display: flex;
     flex-direction: column;
+    gap: var(--spacing-large);
     align-items: center;
 }
 

@@ -18,6 +18,16 @@ export default function CartRow({
     setShouldEdit(!shouldEdit);
   }
 
+  function updateCart(newQuantity) {
+    if (newQuantity > quantity) {
+      const newOne = newQuantity - quantity;
+      setCartCount((currentCartCount) => currentCartCount + newOne);
+    } else {
+      const newOne = quantity - newQuantity;
+      setCartCount((currentCartCount) => currentCartCount - newOne);
+    }
+  }
+
   function finalizeEdit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -35,7 +45,7 @@ export default function CartRow({
       return newItems;
     });
 
-    console.log(cartItems);
+    updateCart(quantity);
     editForm();
   }
   return (

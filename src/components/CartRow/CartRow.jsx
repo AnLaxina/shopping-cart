@@ -1,11 +1,43 @@
 import styles from "./cartrow.module.css";
 
+import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
+
 export default function CartRow({
+  productId = -1,
   productName = "Product Name",
   productImage = "/vite.svg",
   productDescription = "Product Description",
   quantity = 1,
 }) {
+  const [cartCount, setCartCount, cartItems, setCartItems] = useOutletContext();
+
+  const [shouldEdit, setShouldEdit] = useState(false);
+
+  function editForm() {
+    setShouldEdit(!shouldEdit);
+  }
+
+  function finalizeEdit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const quantity = Number(formData.get("newCartAmount"));
+
+    setCartItems((currentCartItems) => {
+      const newItems = new Map(currentCartItems);
+      const currentItem = newItems.get(productId);
+
+      newItems.set(productId, {
+        ...currentItem,
+        itemQuantity: quantity,
+      });
+
+      return newItems;
+    });
+
+    console.log(cartItems);
+    editForm();
+  }
   return (
     <tr>
       <td>{productName}</td>
@@ -15,15 +47,40 @@ export default function CartRow({
       <td>{productDescription}</td>
       <td className={styles.quantityCell}>
         <div className={styles.quantityContainer}>
-          <p>{quantity}</p>
-          <div className={styles.quantityIcons}>
-            <button type="button" className={styles.quantityIcon}>
-              <img src="./edit.png" alt="Edit quantity" />
-            </button>
-            <button type="button" className={styles.quantityIcon}>
-              <img src="./delete.png" alt="Delete item" />
-            </button>
-          </div>
+          {shouldEdit ? (
+            <form
+              action="#"
+              onSubmit={(event) => {
+                finalizeEdit(event);
+              }}
+            >
+              <input
+                type="number"
+                name="newCartAmount"
+                defaultValue={500}
+                min="0"
+                max="999"
+                placeholder="Edit amount"
+              />
+              <button type="submit">Submit</button>
+            </form>
+          ) : (
+            <>
+              <p>{quantity}</p>
+              <div className={styles.quantityIcons}>
+                <button
+                  type="button"
+                  className={styles.quantityIcon}
+                  onClick={editForm}
+                >
+                  <img src="./edit.png" alt="Edit quantity" />
+                </button>
+                <button type="button" className={styles.quantityIcon}>
+                  <img src="./delete.png" alt="Delete item" />
+                </button>
+              </div>
+            </>
+          )}
         </div>
       </td>
     </tr>

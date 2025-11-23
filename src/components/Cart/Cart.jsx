@@ -14,6 +14,7 @@ export default function Cart() {
       listOfCartItems.push(
         <CartRow
           key={id}
+          productId={id}
           productName={cartItem.itemName}
           productImage={cartItem.itemImage}
           productDescription={cartItem.itemDescription}

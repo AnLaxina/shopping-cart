@@ -19,6 +19,12 @@
     border: none;
 }
 
+.quantityContainer input {
+    font-size: var(--font-small);
+    min-width: 100%;
+    color: var(--colour-secondary);
+}
+
 .quantityIcon {
     background: none;
     border: none;

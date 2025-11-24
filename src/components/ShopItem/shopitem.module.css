@@ -55,7 +55,6 @@ button:hover {
 }
 
 @media (width <= 480px) {
-
   /* Once a mobile device is used, turn the name quantity into qty. */
   .mobileStyle {
     display: block;
@@ -64,16 +63,14 @@ button:hover {
   .regularStyle {
     display: none;
   }
+
   button {
     padding: var(--spacing-xs);
   }
+
   .shopItem img {
     width: 64px;
     height: 64px;
-  }
-
-  .shopItem input {
-    max-width: 20%;
   }
 
   .shopItem h3 {

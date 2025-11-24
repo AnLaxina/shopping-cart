@@ -1,3 +1,10 @@
+.shop {
+  display: flex;
+  gap: var(--spacing-medium);
+  align-items: center;
+  flex-direction: column;
+}
+
 .shopItems {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

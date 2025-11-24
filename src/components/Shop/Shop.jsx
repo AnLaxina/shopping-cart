@@ -31,7 +31,7 @@ export default function Shop() {
 
   return (
     <div className={styles.shop}>
-      <h2>ShopItem</h2>
+      <h2>Products</h2>
       {isLoading ? (
         <p>Loading shop items...</p>
       ) : (

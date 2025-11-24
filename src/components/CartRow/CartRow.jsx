@@ -28,6 +28,16 @@ export default function CartRow({
     }
   }
 
+  function deleteCartItem() {
+    const currentItemQuantity = cartItems.get(productId).itemQuantity;
+    setCartCount((currentCartCount) => currentCartCount - currentItemQuantity);
+    setCartItems((prev) => {
+      const clonedMap = new Map(prev);
+      clonedMap.delete(productId);
+      return clonedMap;
+    });
+  }
+
   function finalizeEdit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -85,7 +95,11 @@ export default function CartRow({
                 >
                   <img src="./edit.png" alt="Edit quantity" />
                 </button>
-                <button type="button" className={styles.quantityIcon}>
+                <button
+                  type="button"
+                  className={styles.quantityIcon}
+                  onClick={deleteCartItem}
+                >
                   <img src="./delete.png" alt="Delete item" />
                 </button>
               </div>

@@ -23,6 +23,8 @@ export default function CartRow({
     if (newQuantity > quantity) {
       const newOne = newQuantity - quantity;
       setCartCount((currentCartCount) => currentCartCount + newOne);
+    } else if (newQuantity <= 0) {
+      deleteCartItem();
     } else {
       const newOne = quantity - newQuantity;
       setCartCount((currentCartCount) => currentCartCount - newOne);

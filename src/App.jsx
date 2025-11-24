@@ -1,10 +1,26 @@
 import "./App.css";
 import { Link, Outlet } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [cartCount, setCartCount] = useState(0);
-  const [cartItems, setCartItems] = useState(new Map());
+  const [cartCount, setCartCount] = useState(() => {
+    const stored = localStorage.getItem("cartCount");
+    return stored ?? 0;
+  });
+
+  const [cartItems, setCartItems] = useState(() => {
+    const stored = localStorage.getItem("cartItems");
+    // Since localStorage doesn't take Maps or any other objects, we need to parse/stringify it
+    return stored ? new Map(JSON.parse(stored)) : new Map();
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify([...cartItems]));
+  }, [cartItems]);
+
+  useEffect(() => {
+    localStorage.setItem("cartCount", cartCount);
+  }, [cartCount]);
 
   return (
     <>

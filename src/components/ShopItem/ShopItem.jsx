@@ -1,4 +1,5 @@
 import { useOutletContext } from "react-router-dom";
+import constrainInput from "../../utils/inputConstraint.js";
 import styles from "./shopitem.module.css";
 
 export default function ShopItem({
@@ -63,7 +64,8 @@ export default function ShopItem({
             name="quantity"
             id="quantity"
             min="0"
-            max="1000"
+            max="9999"
+            onChange={(e) => constrainInput(e.target)}
           />
         </div>
         <button type="submit">Add to Cart</button>

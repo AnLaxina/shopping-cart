@@ -1,4 +1,5 @@
 import styles from "./cartrow.module.css";
+import constrainInput from "../../utils/inputConstraint.js";
 
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
@@ -79,8 +80,9 @@ export default function CartRow({
                 name="newCartAmount"
                 defaultValue={cartItems.get(productId).itemQuantity}
                 min="0"
-                max="1000"
+                max="9999"
                 placeholder="Edit amount"
+                onChange={(e) => constrainInput(e.target)}
               />
               <button type="submit">Submit</button>
             </form>

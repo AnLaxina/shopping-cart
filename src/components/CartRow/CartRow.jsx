@@ -77,9 +77,9 @@ export default function CartRow({
               <input
                 type="number"
                 name="newCartAmount"
-                defaultValue={500}
+                defaultValue={cartItems.get(productId).itemQuantity}
                 min="0"
-                max="999"
+                max="1000"
                 placeholder="Edit amount"
               />
               <button type="submit">Submit</button>

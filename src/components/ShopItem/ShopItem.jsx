@@ -57,7 +57,14 @@ export default function ShopItem({
           <label htmlFor="quantity" className={styles.mobileStyle}>
             Qty.{" "}
           </label>
-          <input required type="number" name="quantity" id="quantity" min="0" />
+          <input
+            required
+            type="number"
+            name="quantity"
+            id="quantity"
+            min="0"
+            max="1000"
+          />
         </div>
         <button type="submit">Add to Cart</button>
       </form>

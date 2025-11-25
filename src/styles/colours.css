@@ -1,10 +1,11 @@
 /* Colour palette was found here: https://coolors.co/palette/606c38-283618-fefae0-dda15e-bc6c25
    Olive Garden Feast
 */
+
 :root {
-    --colour-primary: #606C38;
-    --colour-secondary: #283618;
-    --colour-surface: #FEFAE0;
-    --color-accent: #DDA15E;
-    --color-accent-dark: #BC6C25;
+  --colour-primary: #1A1A1A;      /* Ink Black */
+  --colour-secondary: #2E2E2E;    /* Charcoal */
+  --colour-surface: #FAF7F2;      /* Soft Cream */
+  --color-accent: #C6A667;        /* Satin Gold */
+  --color-accent-dark: #9C7F45;   /* Deep Bronze */
 }

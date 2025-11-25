@@ -2,13 +2,12 @@ table {
     table-layout: fixed;
     /* This makes the table fill in the entire width */
     align-self: stretch;
-    /* Just for testing */
-    background-color: red;
+    background-color: var(--colour-secondary);
     border-collapse: collapse;
 }
 
 thead, tr, td, th {
-    border: solid 2px blue;
+    border: solid 2px var(--colour-surface);
     padding: var(--spacing-xs);
 }
 .cart {

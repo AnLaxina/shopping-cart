@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <header>
-        <h1>Shopping Cart App</h1>
+        <h1>StuffMart</h1>
         <nav>
           <ul>
             <li>
